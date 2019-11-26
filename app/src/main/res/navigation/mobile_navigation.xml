@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.projectcalculator.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_doicoso"
+        android:name="com.example.projectcalculator.ui.doicoso.DoiCoSoFragment"
+        android:label="@string/menu_doicoso"
+        tools:layout="@layout/fragment_doicoso" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.projectcalculator.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_doidonvi"
+        android:name="com.example.projectcalculator.ui.doidonvi.DoiDonViFragment"
+        android:label="@string/menu_doidonvi"
+        tools:layout="@layout/fragment_doidonvi" />
 
     <fragment
         android:id="@+id/nav_tools"

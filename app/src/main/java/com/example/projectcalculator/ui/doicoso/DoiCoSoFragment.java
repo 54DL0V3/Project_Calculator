@@ -1,4 +1,4 @@
-package com.example.projectcalculator.ui.gallery;
+package com.example.projectcalculator.ui.doicoso;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.projectcalculator.R;
 
-public class GalleryFragment extends Fragment {
+public class DoiCoSoFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private DoiCoSoViewModel galleryViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+                ViewModelProviders.of(this).get(DoiCoSoViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_doicoso, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
         galleryViewModel.getText().observe(this, new Observer<String>() {
             @Override

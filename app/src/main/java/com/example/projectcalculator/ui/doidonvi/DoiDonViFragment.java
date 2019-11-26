@@ -1,4 +1,4 @@
-package com.example.projectcalculator.ui.slideshow;
+package com.example.projectcalculator.ui.doidonvi;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,15 +14,15 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.projectcalculator.R;
 
-public class SlideshowFragment extends Fragment {
+public class DoiDonViFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private DoiDonViViewModel slideshowViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+                ViewModelProviders.of(this).get(DoiDonViViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_doidonvi, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
         slideshowViewModel.getText().observe(this, new Observer<String>() {
             @Override
