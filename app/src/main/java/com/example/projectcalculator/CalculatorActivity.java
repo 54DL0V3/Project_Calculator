@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private EditText edtNumber;
+    private EditText editNumber;
     private TextView tvResult;
 
     private Button btnNumber1;
@@ -54,7 +54,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
 
     public void initWidget() {
 
-        edtNumber = (EditText) findViewById(R.id.edt_input);
+        editNumber = (EditText) findViewById(R.id.edit_input);
         tvResult = (TextView) findViewById(R.id.tv_result);
 
         btnNumber1 = (Button) findViewById(R.id.btnNumber1);
@@ -109,73 +109,73 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId()) {
             case R.id.btnNumber0:
                 //TO DO
-                edtNumber.append("0");
+                editNumber.append("0");
                 break;
             case R.id.btnNumber1:
                 //TO DO
-                edtNumber.append("1");
+                editNumber.append("1");
                 break;
             case R.id.btnNumber2:
                 //TO DO
-                edtNumber.append("2");
+                editNumber.append("2");
                 break;
             case R.id.btnNumber3:
-                edtNumber.append("3");
+                editNumber.append("3");
                 //TO DO
                 break;
             case R.id.btnNumber4:
                 //TO DO
-                edtNumber.append("4");
+                editNumber.append("4");
                 break;
             case R.id.btnNumber5:
                 //TO DO
-                edtNumber.append("5");
+                editNumber.append("5");
                 break;
             case R.id.btnNumber6:
                 //TO DO
-                edtNumber.append("6");
+                editNumber.append("6");
                 break;
             case R.id.btnNumber7:
                 //TO DO
-                edtNumber.append("7");
+                editNumber.append("7");
                 break;
             case R.id.btnNumber8:
                 //TO DO
-                edtNumber.append("8");
+                editNumber.append("8");
                 break;
             case R.id.btnNumber9:
                 //TO DO
-                edtNumber.append("9");
+                editNumber.append("9");
                 break;
             case R.id.btnCong:
                 //TO DO
-                edtNumber.append("+");
+                editNumber.append("+");
                 break;
             case R.id.btnTru:
                 //TO DO
-                edtNumber.append("-");
+                editNumber.append("-");
                 break;
             case R.id.btnNhan:
                 //TO DO
-                edtNumber.append("*");
+                editNumber.append("*");
                 break;
             case R.id.btnChia:
                 //TO DO
-                edtNumber.append("/");
+                editNumber.append("/");
                 break;
 
             case R.id.btnPoint:
                 //TO DO
-                edtNumber.append(".");
+                editNumber.append(".");
                 break;
             case R.id.btnClear:
                 //TO DO
-                BaseInputConnection textFieldInputConnection = new BaseInputConnection(edtNumber, true);
+                BaseInputConnection textFieldInputConnection = new BaseInputConnection(editNumber, true);
                 textFieldInputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
                 break;
             case R.id.btnClearAll:
                 //TO DO
-                edtNumber.setText("");
+                editNumber.setText("");
                 tvResult.setText("");
 
                 break;
@@ -183,8 +183,8 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 //To do
                 DecimalFormat df = new DecimalFormat("###.#######");
                 double result = 0;
-                addOperation(edtNumber.getText().toString());
-                addNumber(edtNumber.getText().toString());
+                addOperation(editNumber.getText().toString());
+                addNumber(editNumber.getText().toString());
                 // Thuật toán tính toán biểu thức
                 if (arrOperation.size() >= arrNumber.size() || arrOperation.size() < 1) {
                     tvResult.setText("Lỗi định dạng");
@@ -227,7 +227,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 }
 
                 // tvResult.setText(df.format(result) + "");
-                //  edtNumber.setText("");
+                //  editNumber.setText("");
                 //  result = 0;
 //        }
         }
