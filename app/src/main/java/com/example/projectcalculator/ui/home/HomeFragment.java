@@ -12,11 +12,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.projectcalculator.MainActivity;
 import com.example.projectcalculator.R;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
+    private TextView tvHistory;
+    private Bundle bundle;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +33,10 @@ public class HomeFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
+        tvHistory = root.findViewById(R.id.tv_history);
+        bundle = getArguments();
+        tvHistory.setText(bundle.getString("history"));
         return root;
     }
 }

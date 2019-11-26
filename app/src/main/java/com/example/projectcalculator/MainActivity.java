@@ -1,5 +1,6 @@
 package com.example.projectcalculator;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -9,6 +10,7 @@ import android.view.View;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
@@ -24,6 +26,8 @@ import android.view.Menu;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    private String history;
+    public static final int MY_REQUEST_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +36,11 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+        history = "";
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            startActivity(new Intent(MainActivity.this,CalculatorActivity.class));
-
+            startActivityForResult(new Intent(MainActivity.this,CalculatorActivity.class),MY_REQUEST_CODE);
 
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                  //       .setAction("Action", null).show();
@@ -54,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+        //
+        sendHistory();
     }
 
     @Override
@@ -68,5 +74,30 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        if (resultCode == Activity.RESULT_OK && requestCode == MY_REQUEST_CODE) {
+            history = history + "\n" + intent.getStringExtra("feedback");
+        } else {
+            history = history + "";
+        }
+    }
+
+    public void sendHistory()
+    {
+        Bundle bundle = new Bundle();
+        bundle.putString("history",history);
+        Navigation.findNavController(this,R.id.nav_host_fragment).navigate(R.id.nav_home,bundle);
+    }
+
+    public void refreshClicked(View v) {
+        sendHistory();
+    }
+    public void resetClicked(View v) {
+        history="";
+        sendHistory();
     }
 }

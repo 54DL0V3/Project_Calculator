@@ -2,6 +2,8 @@ package com.example.projectcalculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -18,6 +20,7 @@ import java.util.regex.Pattern;
 
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private String history;
 
     private EditText editNumber;
     private TextView tvResult;
@@ -170,11 +173,13 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 break;
             case R.id.btnClear:
                 //TO DO
+                history = history + "\n----------------------------------------\n";
                 BaseInputConnection textFieldInputConnection = new BaseInputConnection(editNumber, true);
                 textFieldInputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
                 break;
             case R.id.btnClearAll:
                 //TO DO
+                history = history + "\n----------------------------------------\n";
                 editNumber.setText("");
                 tvResult.setText("");
 
@@ -189,34 +194,60 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 if (arrOperation.size() >= arrNumber.size() || arrOperation.size() < 1) {
                     tvResult.setText("Lỗi định dạng");
                 } else {
+                    history = "";
+
                     for (int i = 0; i < (arrNumber.size() - 1); i++) {
                         switch (arrOperation.get(i)) {
                             case "+":
                                 if (i == 0) {
                                     result = arrNumber.get(i) + arrNumber.get(i + 1);
+                                    history = history + Double.toString(arrNumber.get(i)) +"\n+\n"
+                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
+                                            + Double.toString(result);
                                 } else {
                                     result = result + arrNumber.get(i + 1);
+                                    history = history + "\n+\n"
+                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
+                                            + Double.toString(result);
                                 }
                                 break;
                             case "-":
                                 if (i == 0) {
                                     result = arrNumber.get(i) - arrNumber.get(i + 1);
+                                    history = history + Double.toString(arrNumber.get(i)) +"\n-\n"
+                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
+                                            + Double.toString(result);
                                 } else {
                                     result = result - arrNumber.get(i + 1);
+                                    history = history + "\n-\n"
+                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
+                                            + Double.toString(result);
                                 }
                                 break;
                             case "*":
                                 if (i == 0) {
                                     result = arrNumber.get(i) * arrNumber.get(i + 1);
+                                    history = history + Double.toString(arrNumber.get(i)) +"\n*\n"
+                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
+                                            + Double.toString(result);
                                 } else {
                                     result = result * arrNumber.get(i + 1);
+                                    history = history + "\n*\n"
+                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
+                                            + Double.toString(result);
                                 }
                                 break;
                             case "/":
                                 if (i == 0) {
                                     result = arrNumber.get(i) / arrNumber.get(i + 1);
+                                    history = history + Double.toString(arrNumber.get(i)) +"\n/\n"
+                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
+                                            + Double.toString(result);
                                 } else {
                                     result = result / arrNumber.get(i + 1);
+                                    history = history + "\n/\n"
+                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
+                                            + Double.toString(result);
                                 }
                                 break;
                             default:
@@ -225,6 +256,7 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                     }
                     tvResult.setText(df.format(result) + "");
                 }
+                history = history + "\n----------------------------------------\n";
 
                 // tvResult.setText(df.format(result) + "");
                 //  editNumber.setText("");
@@ -273,5 +305,18 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         while (matcher.find()) {
             arrNumber.add(Double.valueOf(matcher.group(1)));
         }
+    }
+
+    public void backClicked(View v)
+    {
+        this.onBackPressed();
+    }
+
+    @Override
+    public void finish() {
+        Intent intent = new Intent();
+        intent.putExtra("feedback",history);
+        this.setResult(Activity.RESULT_OK,intent);
+        super.finish();
     }
 }

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:background="@color/design_default_color_primary_dark">
+        android:background="@color/colorGray">
 
         <EditText
             android:id="@+id/edit_input"
@@ -35,7 +35,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="100dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/colorAccent"
@@ -221,5 +221,14 @@
             android:layout_height="100dp"
             android:layout_weight="8" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:text="Back"
+        android:onClick="backClicked"/>
 
 </LinearLayout>
