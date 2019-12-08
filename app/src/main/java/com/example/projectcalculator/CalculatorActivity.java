@@ -194,66 +194,63 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 if (arrOperation.size() >= arrNumber.size() || arrOperation.size() < 1) {
                     tvResult.setText("Lỗi định dạng");
                 } else {
-                    history = "";
+
+                    for (int i = 0; i < (arrNumber.size() - 1); i++) {
+                        switch (arrOperation.get(i)) {
+                            case "*": {
+                                double temp = arrNumber.get(i) * arrNumber.get(i + 1);
+                                arrNumber.set(i, temp);
+                                arrNumber.set(i + 1, (double) 1);
+                                break;
+                            }
+                            case "/": {
+                                double temp = arrNumber.get(i) / arrNumber.get(i + 1);
+                                arrNumber.set(i, temp);
+                                arrNumber.set(i + 1, (double) 1);
+                                break;
+                            }
+                            default:
+                                break;
+                        }
+                    }
+
+                    history = editNumber.getText().toString();
 
                     for (int i = 0; i < (arrNumber.size() - 1); i++) {
                         switch (arrOperation.get(i)) {
                             case "+":
                                 if (i == 0) {
                                     result = arrNumber.get(i) + arrNumber.get(i + 1);
-                                    history = history + Double.toString(arrNumber.get(i)) +"\n+\n"
-                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
-                                            + Double.toString(result);
                                 } else {
                                     result = result + arrNumber.get(i + 1);
-                                    history = history + "\n+\n"
-                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
-                                            + Double.toString(result);
                                 }
                                 break;
                             case "-":
                                 if (i == 0) {
                                     result = arrNumber.get(i) - arrNumber.get(i + 1);
-                                    history = history + Double.toString(arrNumber.get(i)) +"\n-\n"
-                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
-                                            + Double.toString(result);
                                 } else {
                                     result = result - arrNumber.get(i + 1);
-                                    history = history + "\n-\n"
-                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
-                                            + Double.toString(result);
                                 }
                                 break;
                             case "*":
                                 if (i == 0) {
                                     result = arrNumber.get(i) * arrNumber.get(i + 1);
-                                    history = history + Double.toString(arrNumber.get(i)) +"\n*\n"
-                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
-                                            + Double.toString(result);
                                 } else {
                                     result = result * arrNumber.get(i + 1);
-                                    history = history + "\n*\n"
-                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
-                                            + Double.toString(result);
                                 }
                                 break;
                             case "/":
                                 if (i == 0) {
                                     result = arrNumber.get(i) / arrNumber.get(i + 1);
-                                    history = history + Double.toString(arrNumber.get(i)) +"\n/\n"
-                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
-                                            + Double.toString(result);
                                 } else {
                                     result = result / arrNumber.get(i + 1);
-                                    history = history + "\n/\n"
-                                            + Double.toString(arrNumber.get(i+1)) +"\n-----------\n"
-                                            + Double.toString(result);
                                 }
                                 break;
                             default:
                                 break;
                         }
                     }
+                    history += " = " + Double.toString(result);
                     tvResult.setText(df.format(result) + "");
                 }
                 history = history + "\n----------------------------------------\n";
