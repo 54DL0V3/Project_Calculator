@@ -8,28 +8,26 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.projectcalculator.R;
+import com.google.android.material.tabs.TabLayout;
 
 public class DoiDonViFragment extends Fragment {
-
-    private DoiDonViViewModel slideshowViewModel;
+    private View rootView;
+    private ViewPager vpDoiDonVi;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(DoiDonViViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_doidonvi, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        rootView = inflater.inflate(R.layout.fragment_doidonvi,container,false);
+        vpDoiDonVi = rootView.findViewById(R.id.vp_tablayout);
+        vpDoiDonVi.setAdapter(new AdapterTabDonVi(getFragmentManager()));
+        TabLayout tabLayout = rootView.findViewById(R.id.tablayout);
+        tabLayout.setupWithViewPager(vpDoiDonVi);
+        return rootView;
     }
 }
