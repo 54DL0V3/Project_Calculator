@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         //
-        sendHistory();
     }
 
     @Override
@@ -84,9 +83,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             history = history + "";
         }
+        loadHistory();
     }
 
-    public void sendHistory()
+    public void loadHistory()
     {
         Bundle bundle = new Bundle();
         bundle.putString("history",history);
@@ -94,10 +94,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void refreshClicked(View v) {
-        sendHistory();
+        loadHistory();
     }
     public void resetClicked(View v) {
         history="";
-        sendHistory();
+        loadHistory();
     }
 }
