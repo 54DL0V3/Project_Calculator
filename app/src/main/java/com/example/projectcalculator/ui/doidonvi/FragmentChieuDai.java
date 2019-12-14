@@ -129,77 +129,77 @@ public class FragmentChieuDai extends Fragment {
                     if(i == KeyEvent.KEYCODE_0)
                     {
                         edtM.append("0");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_1)
                     {
 
                         edtM.append("1");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_2)
                     {
 
                         edtM.append("2");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_3)
                     {
                         edtM.append("3");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_4)
                     {
                         edtM.append("4");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_5)
                     {
                         edtM.append("5");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_6)
                     {
                         edtMM.append("6");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_7)
                     {
 
                         edtM.append("7");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_8)
                     {
 
                         edtM.append("8");
-                        double milimet = Double.parseDouble(edtM.getText().toString());
-                        edtMM.setText(milimet*1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtM.getText().toString());
+                        edtMM.setText(met*1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_9)
                     {
 
                         edtMM.append("9");
-                        double milimet = Double.parseDouble(edtMM.getText().toString());
-                        edtM.setText(milimet/1000+"");
-                        edtKM.setText(milimet/1000+"");
+                        double met = Double.parseDouble(edtMM.getText().toString());
+                        edtM.setText(met/1000+"");
+                        edtKM.setText(met/1000+"");
                     }
                     return true;
                 }
@@ -215,79 +215,79 @@ public class FragmentChieuDai extends Fragment {
                     if(i == KeyEvent.KEYCODE_0)
                     {
                         edtKM.append("0");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtMM.setText(milimet*1000000+"");
-                        edtM.setText(milimet*1000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtMM.setText(kilomet*1000000+"");
+                        edtM.setText(kilomet*1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_1)
                     {
 
                         edtKM.append("1");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtMM.setText(milimet*1000000+"");
-                        edtM.setText(milimet*1000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtMM.setText(kilomet*1000000+"");
+                        edtM.setText(kilomet*1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_2)
                     {
 
                         edtKM.append("2");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtM.setText(milimet*1000+"");
-                        edtMM.setText(milimet*1000000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtM.setText(kilomet*1000+"");
+                        edtMM.setText(kilomet*1000000+"");
                     }
                     if(i == KeyEvent.KEYCODE_3)
                     {
                         edtKM.append("3");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtMM.setText(milimet*1000000+"");
-                        edtM.setText(milimet*1000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtMM.setText(kilomet*1000000+"");
+                        edtM.setText(kilomet*1000+"");
                     }
                     if(i == KeyEvent.KEYCODE_4)
                     {
                         edtKM.append("4");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtM.setText(milimet*1000+"");
-                        edtMM.setText(milimet*1000000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtM.setText(kilomet*1000+"");
+                        edtMM.setText(kilomet*1000000+"");
                     }
                     if(i == KeyEvent.KEYCODE_5)
                     {
 
                         edtKM.append("5");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtM.setText(milimet*1000+"");
-                        edtMM.setText(milimet*1000000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtM.setText(kilomet*1000+"");
+                        edtMM.setText(kilomet*1000000+"");
                     }
                     if(i == KeyEvent.KEYCODE_6)
                     {
 
                         edtKM.append("6");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtM.setText(milimet*1000+"");
-                        edtMM.setText(milimet*1000000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtM.setText(kilomet*1000+"");
+                        edtMM.setText(kilomet*1000000+"");
                     }
                     if(i == KeyEvent.KEYCODE_7)
                     {
 
                         edtKM.append("7");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtM.setText(milimet*1000+"");
-                        edtMM.setText(milimet*1000000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtM.setText(kilomet*1000+"");
+                        edtMM.setText(kilomet*1000000+"");
                     }
                     if(i == KeyEvent.KEYCODE_8)
                     {
 
                         edtKM.append("8");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtM.setText(milimet*1000+"");
-                        edtMM.setText(milimet*1000000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtM.setText(kilomet*1000+"");
+                        edtMM.setText(kilomet*1000000+"");
                     }
                     if(i == KeyEvent.KEYCODE_9)
                     {
 
                         edtKM.append("9");
-                        double milimet = Double.parseDouble(edtKM.getText().toString());
-                        edtM.setText(milimet*1000+"");
-                        edtMM.setText(milimet*1000000+"");
+                        double kilomet = Double.parseDouble(edtKM.getText().toString());
+                        edtM.setText(kilomet*1000+"");
+                        edtMM.setText(kilomet*1000000+"");
                     }
                     return true;
                 }
