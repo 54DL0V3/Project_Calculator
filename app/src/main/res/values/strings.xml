@@ -16,4 +16,16 @@
 
     <string name="text_refresh">Làm mới</string>
     <string name="text_reset">Xóa</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_camera">Camera</string>
+    <string name="btn_recognize">Recognize</string>
+    <string name="btn_finish">Finish</string>
+    <string name="btn_submit">Submit</string>
+
+    <string name="facebook_app_id">2492502114329591</string>
+    <string name="text_share">Chia sẻ ứng dụng tới:</string>
+    <string name="btn_shareFB">Facebook</string>
+    <string name="text_recognize_result">Recognize result</string>
+    <string name="btn_reset">Reset</string>
+    <string name="text_history">Lịch sử tính toán</string>
 </resources>

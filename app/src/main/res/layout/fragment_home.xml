@@ -12,6 +12,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
+        android:text="@string/text_history"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +34,9 @@
         <TextView
             android:id="@+id/tv_history"
             android:layout_width="wrap_content"
-            android:layout_height="400dp"
+            android:layout_height="wrap_content"
+            android:lines="12"
+            android:scrollbars="vertical"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:textSize="20sp" />

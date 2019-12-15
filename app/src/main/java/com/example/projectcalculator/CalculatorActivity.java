@@ -20,6 +20,7 @@ import java.util.regex.Pattern;
 
 public class CalculatorActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final int MY_REQUEST_CODE = 100;
     private String history;
 
     private EditText editNumber;
@@ -309,11 +310,25 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
         this.onBackPressed();
     }
 
+    public void cameraClicked(View v) {
+        startActivityForResult(new Intent(CalculatorActivity.this,CameraActivity.class),MY_REQUEST_CODE);
+    }
+
     @Override
     public void finish() {
         Intent intent = new Intent();
         intent.putExtra("feedback",history);
         this.setResult(Activity.RESULT_OK,intent);
         super.finish();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+        if (resultCode == Activity.RESULT_OK) {
+            editNumber.setText(intent.getStringExtra("feedback"));
+        } else {
+            editNumber.setText("");
+        }
     }
 }

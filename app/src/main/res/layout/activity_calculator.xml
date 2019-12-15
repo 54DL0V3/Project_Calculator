@@ -14,7 +14,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btnBack"
+            android:layout_below="@+id/btn_Back"
             android:background="@color/colorGray">
 
             <EditText
@@ -37,13 +37,22 @@
         </RelativeLayout>
         <Button
             android:layout_alignParentRight="true"
-            android:id="@+id/btnBack"
+            android:id="@+id/btn_Back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="16dp"
-            android:text="Back"
+            android:text="@string/btn_back"
             android:onClick="backClicked"/>
+
+        <Button
+            android:id="@+id/btn_Camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btn_Back"
+            android:layout_marginTop="16dp"
+            android:text="@string/btn_camera"
+            android:onClick="cameraClicked"/>
 
         <LinearLayout
             android:layout_width="match_parent"
